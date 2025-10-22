@@ -156,15 +156,7 @@ document.getElementById("check").onclick = function() {
     let result = "";
 if A + R = H + M
     result = "верно";
-    if (M <= Vcube && M <= Vcylinder) {
-        result = "Жидкость помещается в обе ёмкости.";
-    } else if (M <= Vcube) {
-        result = "Жидкость помещается только в кубическую ёмкость.";
-    } else if (M <= Vcylinder) {
-        result = "Жидкость помещается только в цилиндрическую ёмкость.";
-    } else {
-        result = "Жидкость не помещается ни в одну ёмкость.";
-    }
+   
 
     document.getElementById("result").value = result;
 };
@@ -176,5 +168,6 @@ document.getElementById("send").onclick = function() {
 
 </body>
 </html>
+
 
 
