@@ -251,7 +251,6 @@
       const safe = readFieldsSafe();
       const out = document.getElementById('out');
       out.innerHTML = [
-        '<b>Результат точной команды:</b> ' + escapeHtml(String(exact)),
         '<b>Результат (безопасный доступ по id):</b>',
         ' — Фамилия: ' + escapeHtml(safe.surname),
         ' — Имя: ' + escapeHtml(safe.name),
@@ -259,7 +258,6 @@
       ].join('<br>');
     });
 
-    // ========== Создать скрин всей области паспорта и вставить в страницу ==========
     document.getElementById('btnHtml2Canvas').addEventListener('click', function () {
       const area = document.getElementById('passportArea');
       html2canvas(area, { scale: 2 }).then(function (canvas) {
@@ -285,7 +283,6 @@
       });
     });
 
-    // утилита: экранирование для вывода в HTML
     function escapeHtml(s) {
       return s.replace(/[&<>"']/g, function (m) {
         return ({'&':'&amp;','<':'<','>':'>','"':'&quot;',"'":'&#39;'})[m];
@@ -313,3 +310,4 @@
 </body>
 
 </html>
+
