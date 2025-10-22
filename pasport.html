@@ -43,66 +43,44 @@
     }
 
     .passport {
-      width:900px;
+      width: 900px;
       margin: 0 auto 20px;
-      display:flex;
-      gap:20px;
+      display: flex;
+      gap: 20px;
     }
 
     .page {
-      width:420px;
-      min-height:400px;
-      background:linear-gradient(180deg,#fff,#f8f8fb);
-      border:2px solid #cfcfe6;
-      border-radius:15px;
-      padding:24px;
+      width: 420px;
+      min-height: 400px;
+      background: linear-gradient(180deg,#fff,#f8f8fb);
+      border: 2px solid #cfcfe6;
+      border-radius: 15px;
+      padding: 24px;
     }
 
     .page h2 {
-      font-size:16px;
-      margin-bottom:10px;
-      text-align:center;
+      font-size: 16px;
+      margin-bottom: 10px;
+      text-align: center;
     }
 
-    .field { margin:12px 0; }
+    .field { margin: 12px 0; }
     .field label {
-      display:block;
-      font-size:12px;
-      color:#666;
-      margin-bottom:4px;
+      display: block;
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 4px;
     }
 
     .value-container {
-      padding:6px 8px;
-      background:#fff;
-      border:1px solid #e6e6ee;
-      border-radius:4px;
-      font-size:14px;
-      line-height:1.4;
-      box-sizing: border-box;
+      padding: 6px 8px;
+      background: #fff;
+      border: 1px solid #e6e6ee;
+      border-radius: 4px;
+      font-size: 14px;
+      line-height: 1.4;
       min-height: 24px;
-    }
-
-    .value-container input {
-      width: 100%;
-      padding: 0;
-      margin: 0;
-      border: none;
-      background: transparent;
-      font: inherit;
-      outline: none;
-      box-sizing: border-box;
-    }
-
-    .value-container span {
-      display: block;
-      word-break: break-all;
-    }
-
-    .note {
-      font-size:12px;
-      color:#E8E8E8;
-      margin-top:6px;
+      text-align: left;
     }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
@@ -119,60 +97,44 @@
   </header>
 
   <main>
-    <div class="passport" id="passportArea">
-      <div class="page" id="page2">
+    <div class="passport">
+      <div class="page">
         <h2>Страница 2</h2>
         <div class="field">
           <label>Паспорт выдан</label>
-          <div class="value-container">
-            <input type="text" id="adress2" value="ГУ МВД РОССИИ ПО МОСКОВСКОЙ ОБЛАСТИ">
-          </div>
+          <div class="value-container">ГУ МВД РОССИИ ПО МОСКОВСКОЙ ОБЛАСТИ</div>
         </div>
         <div class="field">
           <label>Дата выдачи</label>
-          <div class="value-container">
-            <input type="text" id="date" value="09.02.2021">
-          </div>
+          <div class="value-container">09.02.2021</div>
         </div>
         <div class="field">
           <label>Код подразделения</label>
-          <div class="value-container">
-            <input type="text" id="kode" value="500-010">
-          </div>
+          <div class="value-container">500-010</div>
         </div>
       </div>
 
-      <div class="page" id="page3">
-        <h2>Страница 3 </h2>
+      <div class="page">
+        <h2>Страница 3</h2>
         <div class="field">
           <label>Фамилия</label>
-          <div class="value-container">
-            <span id="surname">Гасанова</span>
-          </div>
+          <div class="value-container">Гасанова</div>
         </div>
         <div class="field">
           <label>Имя</label>
-          <div class="value-container">
-            <span id="name">Айзанат</span>
-          </div>
+          <div class="value-container">Айзанат</div>
         </div>
         <div class="field">
           <label>Отчество</label>
-          <div class="value-container">
-            <span id="patronymic">Эльбрусовна</span>
-          </div>
+          <div class="value-container">Эльбрусовна</div>
         </div>
         <div class="field">
           <label>Пол</label>
-          <div class="value-container">
-            <input type="text" id="sex" value="Жен">
-          </div>
+          <div class="value-container">Жен</div>
         </div>
         <div class="field">
           <label>Дата рождения</label>
-          <div class="value-container">
-            <span id="birth_year">23.10.2006</span>
-          </div>
+          <div class="value-container">23.10.2006</div>
         </div>
       </div>
     </div>
