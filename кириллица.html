@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>DOM_JS</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body {
+      background: linear-gradient(to bottom, #7BA478, #4d684b);
+      font-family: 'Pangolin', cursive;
+      margin: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #4F6F4F;
+      padding: 20px 0;
+    }
+
+    header h1 {
+      color: #E8E8E8;
+      font-size: 36px;
+      margin: 0;
+    }
+
+    nav {
+      margin: 15px 0;
+    }
+
+    nav a {
+      color: #E8E8E8;
+      background-color: #304538;
+      text-decoration: none;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    main {
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .passport {
+      width:900px;
+      margin: 0 auto 20px;
+      display:flex;
+      gap:20px;
+    }
+
+    .page {
+      width:420px;
+      min-height:400px;
+      background:linear-gradient(180deg,#fff,#f8f8fb);
+      border:2px solid #cfcfe6;
+      border-radius:15px;
+      padding:24px;
+    }
+
+    .page h2 {
+      font-size:16px;
+      margin-bottom:10px;
+      text-align:center;
+    }
+
+    .field { margin:12px 0; }
+    .field label {
+      display:block;
+      font-size:12px;
+      color:#666;
+      margin-bottom:4px;
+    }
+
+    .value-container {
+      padding:6px 8px;
+      background:#fff;
+      border:1px solid #e6e6ee;
+      border-radius:4px;
+      font-size:14px;
+      line-height:1.4;
+      box-sizing: border-box;
+      min-height: 24px;
+    }
+
+    .value-container input {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      border: none;
+      background: transparent;
+      font: inherit;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .value-container span {
+      display: block;
+      word-break: break-all;
+    }
+
+    .controls {
+      text-align:center;
+      margin:16px 0;
+    }
+
+    button {
+      padding:8px 14px;
+      border-radius:6px;
+      border:1px solid #7d7d9a;
+      background:#fff;
+      cursor:pointer;
+      margin: 0 5px;
+    }
+
+    #result {
+      max-width:900px;
+      margin: 12px auto;
+      text-align:center;
+      color: #E8E8E8;
+    }
+
+    #screenshotContainer img {
+      max-width:100%;
+      border:1px solid #ccc;
+      margin-top:8px;
+    }
+
+    .note {
+      font-size:12px;
+      color:#E8E8E8;
+      margin-top:6px;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1 style="font-size:100px">Изменяем кириллицу на латиницу по клику</h1>
+    <nav>
+      <a href="index.html" class="active">На главную</a>
+      <a href="algorithm.html">Алгоритм</a>
+        <a href="pasport.html">Паспорт</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="passport" id="passportArea">
+      <div class="page" id="page2">
+        <h2>Страница 2</h2>
+
+        <div class="field">
+          <label>Паспорт выдан</label>
+          <div class="value-container">
+            <input type="text" class="translatable" data-latin="GU MVD ROSSII PO MOSKOVSKOI OBLASTI" value="ГУ МВД РОССИИ ПО МОСКОВСКОЙ ОБЛАСТИ">
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Дата выдачи</label>
+          <div class="value-container">
+            <input type="text" class="translatable" data-latin="09.02.2021" value="09.02.2021">
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Код подразделения</label>
+          <div class="value-container">
+            <input type="text" class="translatable" data-latin="500-010" value="500-010">
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="page3">
+        <h2>Страница 3</h2>
+
+        <div class="field">
+          <label>Фамилия</label>
+          <div class="value-container">
+            <span id="surname" class="translatable" data-latin="Gasanova">Гасанова</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Имя</label>
+          <div class="value-container">
+            <span id="name" class="translatable" data-latin="Ayzanat">Айзанат</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Отчество</label>
+          <div class="value-container">
+            <span id="patronymic" class="translatable" data-latin="Elbrusovna">Эльбрусовна</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Пол</label>
+          <div class="value-container">
+            <input type="text" class="translatable" data-latin="Zh" value="Жен">
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Дата рождения</label>
+          <div class="value-container">
+            <span id="birth_full" class="translatable" data-latin="23.10.2006">23.10.2006</span>
+          </div>
+        </div>
+
+        <div id="screenshotContainer" class="field">
+          <label>Скриншот страницы (вставится здесь после создания)</label>
+          <div id="screenshotPlaceholder">Пока пусто</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="latinToggle">Перевести на латиницу</button>
+    </div>
+
+    <div id="result">
+      <div id="out"></div>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('latinToggle').addEventListener('click', function () {
+      document.querySelectorAll('.translatable').forEach(function (el) {
+        const tmp = el.textContent;
+        el.textContent = el.dataset.latin;
+        el.dataset.latin = tmp;
+      });
+    });
+  </script>
+
+</body>
+</html>

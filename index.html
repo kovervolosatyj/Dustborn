@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <style>
+        body {
+            background:
+            linear-gradient(to bottom, #7BA478, #4d684b);
+            font-family: Pangolin;
+            margin: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4F6F4F;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            color: #E8E8E8;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        nav {
+            margin: 15px 0;
+        }
+
+        nav a {
+            color: #E8E8E8;
+            background-color: #304538;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        nav a.active {
+        background-color: #8BAF8A;
+        font-weight: bold;
+        box-shadow: 0 0 10px rgba(255,255,255,0.4);
+        }
+
+
+        nav a:hover {
+            background-color: #304538;
+        }
+
+        .banner {
+            margin-top: 20px;
+        }
+
+        .banner img {
+            max-width: 70%;
+            border-radius: 10px;
+        }
+
+        main {
+            margin: 30px auto;
+            width: 70%;
+            background-color: #304538;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        footer {
+            margin: 20px;
+            color: #2F4F4F;
+        }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1 style="font-size: 100px;">Dustborn</h1>
+    <nav>
+        <a href="#about">Об игре</a>
+        <a href="#characters">Персонажи</a>
+        <a href="level.html">Уровни</a>
+        <a href="quiz.html">Форма</a>
+        <a href="https://rutube.ru/video/e6d008573282efe36fd33782cb091b42/" target="_self"><img src="images/free-icon-video-7606191.png" height="10" width="10"/> </a>
+            <a href="pasport.html">Паспорт и задания</a>
+
+
+    </nav>
+</header>
+
+<div class="banner">
+
+    <site-banner>
+        <picture>
+            <img src="https://i.pinimg.com/1200x/92/88/bb/9288bbcca42064eb5083b45301ba4f95.jpg">
+        </picture>
+    </site-banner>
+
+</div>
+
+<main style="color: #FFFFFF">
+    <h2 id="about">О игре</h2>
+    <p>Dustborn — 3D платформер-сайд-скроллер, в котором комок пыли должен достичь максимального размера, собирая пыль по всей комнате.</p>
+
+    <h2 id="characters">Персонажи</h2>
+    <p>Игрок — Пылинка, маленький комок пыли, способный увеличиваться, собирая частицы вокруг.</p>
+
+    <h2 id="levels">Уровни</h2>
+    <p> Уровень представляет собой захламленную комнату, полную самых разных платформ, которые приближают и отдаляют его от цели
+    </p>
+</main>
+<script>
+    const links = document.querySelectorAll('nav a');
+
+
+    function setActive(link) {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+    }
+
+
+    links.forEach(link => {
+        link.addEventListener('click', () => setActive(link));
+
+
+        if (link.href === window.location.href) {
+            setActive(link);
+        }
+    });
+</script>
+
+</body>
+</html>

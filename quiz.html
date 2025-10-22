@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Dustborn — игра</title>
+    <style>
+        body {
+            background-color: #7BA478;
+            font-family: Pangolin;
+            margin: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4F6F4F;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            color: #E8E8E8;
+            font-size: 36px;
+            margin: 0;
+        }
+         nav {
+            margin: 15px 0;
+        }
+
+        nav a {
+            color: #E8E8E8;
+            background-color: #304538;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 10px;
+            display: inline-block;
+
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1 style="font-size: 100px;">Какая ты пыль?</h1>
+    <nav>
+        <a href="index.html">На главную</a>
+        </header>
+<form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank"
+      style="background: #d8e3d8; border-radius: 15px; padding: 30px; width: 70%; margin: 30px auto; box-shadow: 0 0 10px rgba(0,0,0,0.2); font-family: Pangolin; color: #304538;">
+
+  <h2 style="text-align:center; color:#2F4F4F;">Регистрационная форма пылежоров</h2>
+
+  <p> Для поисковика:
+    <input type="hidden" name="q" value="search">
+  </p>
+
+  <p>Имя: <input type="text" name="last_name" size="25" value="Пылинка"
+     style="border-radius:6px; border:1px solid #4F6F4F; background:#f0f7f0; padding:3px;"></p>
+
+  <p>Возраст пыли (в годах): <input type="number" name="age" size="5" value="0"
+     style="border-radius:6px; border:1px solid #4F6F4F; background:#f0f7f0; padding:3px;"></p>
+
+  <p>Место обитания:
+    <label><input type="radio" name="place" value="bookshelf"> Книжная зона</label>
+    <label><input type="radio" name="place" value="kitchen" checked> Кухня</label>
+      <label><input type="radio" name="place" value="kitchen" checked> Бытовая зона</label>
+  </p>
+
+  <p>Опыт пожирания пыли:
+    <label><input type="checkbox" name="experience" value="10" checked> Нуб – 10 пылинок</label><br>
+    <label><input type="checkbox" name="experience" value="20"> Про – 20 пылинок</label><br>
+    <label><input type="checkbox" name="experience" value="30"> Хакер – 30 пылинок</label>
+      <label><input type="checkbox" name="experience" value="30"> Бог – 100 пылинок</label>
+  </p>
+
+  <p>Уровень владения языком Чистоты:
+    <select name="languages" style="border-radius:6px; border:1px solid #4F6F4F; background:#f0f7f0;">
+      <option value="fluently">Владею свободно</option>
+      <option value="translate">Перевожу с трудом</option>
+    </select>
+  </p>
+
+  <p>Дополнительная информация:<br>
+    <textarea cols="60" rows="4" name="textarea" style="border-radius:8px; border:1px solid #4F6F4F; background:#f0f7f0;">Заметки пылежора...</textarea>
+  </p>
+
+  <p>Дата кушанья: <input type="date" name="user_date" value="2025-10-21"
+     style="border-radius:6px; border:1px solid #4F6F4F; background:#f0f7f0;"></p>
+
+  <p>Пароль: <input type="password" name="password" size="9" value="***"
+     style="border-radius:6px; border:1px solid #4F6F4F; background:#f0f7f0;"></p>
+
+  <!-- системные поля -->
+  <p>Название файла:
+    <input type="text" name="000_file_name" value="Dustborn_log.txt" size="30"
+     style="border-radius:6px; border:1px solid #4F6F4F; background:#f0f7f0;">
+  </p>
+
+  <p>Тип записи:
+    <select name="010_mode" style="border-radius:6px; border:1px solid #4F6F4F; background:#f0f7f0;">
+      <option value="a">a — добавить в архив</option>
+      <option value="w">w — переписать архив</option>
+    </select>
+  </p>
+
+  <input type="hidden" name="function" value="page">
+  <input type="hidden" name="page_id" value="3">
+
+  <p style="text-align:center;">
+    <input type="reset" value="Очистить следы" style="background:#7BA478; color:white; border:none; border-radius:8px; padding:8px 15px; cursor:pointer;">
+    <input type="submit" value="Отправить в эфир" style="background:#4F6F4F; color:white; border:none; border-radius:8px; padding:8px 15px; cursor:pointer;">
+  </p>
+
+</form>
+
+</body>
+</html>

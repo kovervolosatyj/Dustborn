@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>DOM_JS. Считываем информацию из DOM</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  .field { margin-bottom: 12px; }
+  .field label { display: block; font-weight: bold; margin-bottom: 4px; }
+  .field input, .field p { padding: 6px; border: 1px solid #ccc; border-radius: 4px; }
+  .readonly { background: #eee; }
+  button { margin-top: 12px; padding: 6px 12px; }
+</style>
+</head>
+<body>
+
+<h1>DOM_JS. Считываем информацию из DOM</h1>
+
+<div class="passport">
+
+  <!-- Имя, фамилия, год рождения - только чтение -->
+  <div class="field">
+    <label>Фамилия</label>
+    <p id="surname" class="readonly">Иванов</p>
+  </div>
+
+  <div class="field">
+    <label>Имя</label>
+    <p id="name" class="readonly">Анастасия</p>
+  </div>
+
+  <div class="field">
+    <label>Год рождения</label>
+    <p id="birth_year" class="readonly">1995</p>
+  </div>
+
+  <!-- Остальные поля можно редактировать -->
+  <div class="field">
+    <label>Гражданство</label>
+    <input type="text" id="citizenship" value="Российская Федерация">
+  </div
