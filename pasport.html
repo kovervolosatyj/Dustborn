@@ -37,12 +37,10 @@
       display: inline-block;
     }
 
-
     main {
       margin: 30px auto;
       padding: 20px;
     }
-
 
     .passport {
       width:900px;
@@ -53,7 +51,7 @@
 
     .page {
       width:420px;
-      min-height:400 px;
+      min-height:400px;
       background:linear-gradient(180deg,#fff,#f8f8fb);
       border:2px solid #cfcfe6;
       border-radius:15px;
@@ -101,39 +99,13 @@
       word-break: break-all;
     }
 
-    .controls {
-      text-align:center;
-      margin:16px 0;
-    }
-
-    button {
-      padding:8px 14px;
-      border-radius:6px;
-      border:1px solid #7d7d9a;
-      background:#fff;
-      cursor:pointer;
-    }
-
-    #result {
-      max-width:900px;
-      margin: 12px auto;
-      text-align:center;
-      color: #E8E8E8;
-    }
-
-    #screenshotContainer img {
-      max-width:100%;
-      border:1px solid #ccc;
-      margin-top:8px;
-    }
-
     .note {
       font-size:12px;
       color:#E8E8E8;
       margin-top:6px;
     }
   </style>
-      <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -141,31 +113,27 @@
     <h1 style="font-size:100px">DOM_JS</h1>
     <nav>
       <a href="index.html" class="active">На главную</a>
-        <a href="кириллица.html" class="active">Перевод на кириллицу</a>
-        <a href="algorithm.html">Алгоритм</a>
+      <a href="кириллица.html">Перевод на кириллицу</a>
+      <a href="algorithm.html">Алгоритм</a>
     </nav>
   </header>
 
   <main>
-
     <div class="passport" id="passportArea">
       <div class="page" id="page2">
         <h2>Страница 2</h2>
-
         <div class="field">
           <label>Паспорт выдан</label>
           <div class="value-container">
             <input type="text" id="adress2" value="ГУ МВД РОССИИ ПО МОСКОВСКОЙ ОБЛАСТИ">
           </div>
         </div>
-
         <div class="field">
           <label>Дата выдачи</label>
           <div class="value-container">
             <input type="text" id="date" value="09.02.2021">
           </div>
         </div>
-
         <div class="field">
           <label>Код подразделения</label>
           <div class="value-container">
@@ -176,138 +144,39 @@
 
       <div class="page" id="page3">
         <h2>Страница 3 </h2>
-
         <div class="field">
           <label>Фамилия</label>
           <div class="value-container">
             <span id="surname">Гасанова</span>
           </div>
         </div>
-
         <div class="field">
           <label>Имя</label>
           <div class="value-container">
             <span id="name">Айзанат</span>
           </div>
         </div>
-
         <div class="field">
           <label>Отчество</label>
           <div class="value-container">
             <span id="patronymic">Эльбрусовна</span>
           </div>
         </div>
-
         <div class="field">
           <label>Пол</label>
           <div class="value-container">
             <input type="text" id="sex" value="Жен">
           </div>
         </div>
-
         <div class="field">
           <label>Дата рождения</label>
           <div class="value-container">
             <span id="birth_year">23.10.2006</span>
           </div>
         </div>
-
-        <div id="screenshotContainer" class="field">
-          <label>Скриншот страницы (вставится здесь после создания)</label>
-          <div id="screenshotPlaceholder">Пока пусто</div>
-        </div>
       </div>
-    </div>
-
-    <div class="controls">
-      <button id="btnRead">Считать данные из DOM (пример)</button>
-      <button id="btnHtml2Canvas">Сделать скрин (html2canvas)</button>
-    </div>
-
-    <div id="result">
-      <div id="out"></div>
     </div>
   </main>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-
-  <script>
-    function exampleExactCommand() {
-      try {
-        var raw = document.getElementsByTagName('p')[2].childNodes[1].innerText;
-        return raw;
-        
-    function readFieldsSafe() {
-      const surname = document.querySelector('#surname')?.innerText || '[нет данных]';
-      const name = document.querySelector('#name')?.innerText || '[нет данных]';
-      const birthYear = document.querySelector('#birth_year')?.innerText || '[нет данных]';
-      return { surname, name, birthYear };
-    }
-
-    // ========== Обработчики кнопок ==========
-    document.getElementById('btnRead').addEventListener('click', function () {
-      const exact = exampleExactCommand();
-      const safe = readFieldsSafe();
-      const out = document.getElementById('out');
-      out.innerHTML = [
-        '<b>Результат (безопасный доступ по id):</b>',
-        ' — Фамилия: ' + escapeHtml(safe.surname),
-        ' — Имя: ' + escapeHtml(safe.name),
-        ' — Год рождения: ' + escapeHtml(safe.birthYear),
-      ].join('<br>');
-    });
-
-    document.getElementById('btnHtml2Canvas').addEventListener('click', function () {
-      const area = document.getElementById('passportArea');
-      html2canvas(area, { scale: 2 }).then(function (canvas) {
-        const dataURL = canvas.toDataURL('image/png');
-        const img = document.createElement('img');
-        img.src = dataURL;
-        img.alt = 'Скрин паспорта';
-        const placeholder = document.getElementById('screenshotContainer');
-        const ph = document.getElementById('screenshotPlaceholder');
-        ph.innerHTML = '';
-        ph.appendChild(img);
-
-        const dl = document.createElement('a');
-        dl.href = dataURL;
-        dl.download = 'passport_screenshot.png';
-        dl.textContent = 'Скачать скрин (png)';
-        dl.style.display = 'inline-block';
-        dl.style.marginTop = '8px';
-        ph.appendChild(document.createElement('br'));
-        ph.appendChild(dl);
-      }).catch(function (err) {
-        alert('Ошибка создания скрина: ' + err);
-      });
-    });
-
-    function escapeHtml(s) {
-      return s.replace(/[&<>"']/g, function (m) {
-        return ({'&':'&amp;','<':'<','>':'>','"':'&quot;',"'":'&#39;'})[m];
-      });
-    }
- const links = document.querySelectorAll('nav a');
-
-
-    function setActive(link) {
-        links.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-    }
-
-
-    links.forEach(link => {
-        link.addEventListener('click', () => setActive(link));
-
-
-        if (link.href === window.location.href) {
-            setActive(link);
-        }
-    });
-  </script>
-
 </body>
-
 </html>
-
